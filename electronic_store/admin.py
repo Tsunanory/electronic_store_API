@@ -8,7 +8,7 @@ class NetworkNodeAdmin(admin.ModelAdmin):
     list_filter = ('city', 'country')
     search_fields = ('name',)
 
-    def clear_debt(self, request, queryset):
+    def clear_debt(self, queryset):
         queryset.update(debt=0)
     clear_debt.short_description = "Clear debt for selected network nodes"
 
